@@ -2,79 +2,28 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>myta1 - المنصة الشاملة</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>body{background:#0f172a; font-family: sans-serif;}</style>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>mytal - ميتاموت برو</title>
+<style>
+body{font-family:system-ui;background:#0f172a;color:#fff;margin:0;text-align:center}
+h1{margin:40px 0 5px;font-size:32px}
+h1 span{color:#38bdf8}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:20px;max-width:500px;margin:auto}
+.card{background:#1e293b;padding:22px;border-radius:18px;text-decoration:none;color:#fff;font-weight:700;font-size:18px}
+.card p{color:#94a3b8;font-weight:400;font-size:14px;margin:6px 0 0}
+.full{grid-column:1/3;background:#38bdf8;color:#000;font-size:22px}
+</style>
 </head>
-<body class="p-3 grid grid-cols-12 gap-3">
-
-<!-- 1 و 2 -->
-<div class="col-span-6 bg-[#1e293b] rounded-[18px] p-4">
-<h3 class="font-bold text-black text-[18px]">ينقل المستخدم 1<br>الى واجههه منصه<br>الاعمال</h3>
+<body>
+<h1>mytal <span>ميتاموت</span></h1>
+<p style="color:#94a3b8">نظام محاسبة ومخزون - تعز</p>
+<div class="grid">
+<a class="card full" href="invoices/list.html">🧾 الفواتير<p>مبيعات ومشتريات</p></a>
+<a class="card" href="products/list.html">📦<br>المنتجات</a>
+<a class="card" href="customers/list.html">👥<br>العملاء</a>
+<a class="card" href="database/">🗄️<br>البيانات</a>
+<a class="card" href="auth/">🔐<br>الدخول</a>
 </div>
-<div class="col-span-6 bg-[#1e293b] rounded-[18px] p-4">
-<h3 class="font-bold text-black text-[18px]">ينقل المستخدم 2<br>الى واجهة متجر<br>الكتروني</h3>
-</div>
-
-<!-- حساب تجاري / شخصي -->
-<div class="col-span-12 bg-[#1a2550] rounded-[18px] p-4 text-black text-[14px] leading-7">
-<p>1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2</p>
-<p>حساب شخصي ==== حساب تجاري</p>
-<p>تسجيل الدخول ==== تسجيل الدخول</p>
-<p>البريد الإلكتروني ==== اسم المؤسسة</p>
-<p>إنشاء حساب ==== الرقم الضريبي.</p>
-<p>تسجيل الدخول عبر جوجل ==== بريد الشركه.</p>
-</div>
-
-<!-- لوحة ادارة المؤسسة -->
-<div class="col-span-12 bg-[#1a2550] rounded-[18px] p-4">
-<h3 class="font-bold text-black mb-3">لوحه ادره المؤسسه - مدير المؤسسه وتفاصيله</h3>
-<div class="grid gap-2">
-<div class="bg-[#16204a] rounded-xl p-3 text-black text-[13px]">إنشاء شركه 1-2-3-4-5-6-7-8-9-10 || / \ /|\</div>
-<div class="bg-[#16204a] rounded-xl p-3 text-black text-[13px]">إنشاء فرع 1-2-3-4-5-6-7-8-9-10 || / \ /|\</div>
-<div class="bg-[#16204a] rounded-xl p-3 text-black text-[13px]">إضافة مخزن 1-2-3-4-5-6-7-8-9-10</div>
-<div class="bg-[#16204a] rounded-xl p-3 text-black text-[13px]">إضافه عمال 1-2-3-4-5-6-7-8-9-20</div>
-<div class="bg-[#16204a] rounded-xl p-3 text-black text-[13px]">إضافه مستخدمين 1-2-3-4-5-6-7-8-9-10</div>
-</div>
-</div>
-
-<!-- مشتريات -->
-<div class="col-span-12 bg-[#1e293b] rounded-[18px] p-4">
-<h3 class="font-bold text-black">مشتريات - الموردين - العملاء - الموظفين - الشركاء</h3>
-<p class="text-black text-[12px] mt-2">مشتريات فاتوره جديده<br>اسم التاجر - رقم الفاتورة - رقم الجوال - الرقم الضريبي - اسم الصنف -سعر -سعر الصف...</p>
-<div class="grid grid-cols-3 gap-2 mt-3">
-<div class="bg-[#16204a] rounded-xl p-2 text-black text-[11px]">الموردين بحث<br>اسم التاجر<br>مدين<br>دائن<br>التاجر محمد<br>فاتوره اجل<br>سند واصل<br>...</div>
-<div class="bg-[#16204a] rounded-xl p-2 text-black text-[11px]">العملاء بحث<br>اسم التاجر<br>مدين<br>دائن<br>العميل محمد<br>فاتوره اجل<br>سند واصل<br>...</div>
-<div class="bg-[#16204a] rounded-xl p-2 text-black text-[11px]">الموظفيين بحث<br>اسم الموظف - الاسم () - البريد الإلكتروني - الراتب - الدوام- الإجازة -...</div>
-</div>
-<div class="bg-[#16204a] rounded-xl p-3 mt-2 text-black text-[11px]">راس مال الشركاء<br>اسماء الشركاء<br>مكاسب الشركاء<br>ديون الشركاء</div>
-</div>
-
-<!-- مبيعات -->
-<div class="col-span-7 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">مبيعات نقطه بيع نقدي</h3><p class="text-black text-[11px]">فاتوره جديده- رقم الفاتوره - اسم الصنف -...</p></div>
-<div class="col-span-5 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">العملاء</h3><p class="text-black text-[11px]">اسماء العملاء<br>مدين<br>اجل<br>العميل محمد<br>فاتوره...</p></div>
-
-<!-- المتجر -->
-<div class="col-span-6 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">المتجر واجهة العميل</h3><p class="text-black text-[11px]">الرئيسية: بنر عروض + أقسام + المنتجات +...</p></div>
-<div class="col-span-6 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">واجهة التاجر لوحة التحكم</h3><p class="text-black text-[11px]">لوحة الأرقام كم المبيعات اليوم؟...</p></div>
-
-<!-- التوصيل -->
-<div class="col-span-4 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">واجهه توصيل - الطلبات - واجهة الزبون</h3><p class="text-black text-[11px]">حالة الطلب مباشر : تم قبول الطلب -...</p></div>
-<div class="col-span-4 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">واجهة التاجر إدارة التوصيل</h3><p class="text-black text-[11px]">قائمة الطلبات الجاهزة للتوصيل...</p></div>
-<div class="col-span-4 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">واجهة عامل التوصيل</h3><p class="text-black text-[11px]">تسجيل دخول و زر "أنا متاح الان / مشغول"...</p></div>
-
-<!-- الاستثمار -->
-<div class="col-span-12 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">ملخص فكره منصه استثمار - نظام التمويل التشاركي للمخزون</h3><p class="text-black text-[11px]">فكرة المشروع: منصة تربط بين 3 أطراف: التاجر (يحتاج بضاعة)، المستثمر، والزبون...</p></div>
-
-<!-- الذكاء -->
-<div class="col-span-12 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">💾 الذكاء الاصطناعي - المحاسب الذكي بالصوت 🤖</h3><p class="text-black text-[11px]">بالأوامر الصوتية: "يا محاسب كم بعت اليوم؟" -> "بعت 15 طلب $1200 ربح / $300" / "سجل مصروف $50 إيجار...</p></div>
-
-<!-- الاعدادات -->
-<div class="col-span-6 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">الاعدادات الخاصه بالمستخدمين</h3><p class="text-black text-[11px]">الوضع الليلي / النهار - 4 أزرار...</p></div>
-<div class="col-span-6 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">الإعدادات الخاصه بمنشئ التطبيق</h3><p class="text-black text-[11px]">باقات: مجانية 10 منتجات /...</p></div>
-
-<div class="col-span-12 bg-[#1e293b] rounded-[18px] p-4 mt-2"><h3 class="font-bold text-black">💾 الذكاء الاصطناعي 🤖 /محاسبة</h3></div>
-
+<p style="margin-top:30px;color:#475569">تم - جاهز للبيع ✅</p>
 </body>
 </html>
