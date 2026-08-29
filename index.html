@@ -2,90 +2,79 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>وثيقة المشروع الشامل</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>myta1 - المنصة الشاملة</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<style>body{background:#0f172a; font-family: sans-serif;}</style>
 </head>
-<body class="bg-[#0f172a] text-white p-4 grid grid-cols-12 gap-4">
+<body class="p-3 grid grid-cols-12 gap-3">
 
-<!-- 1-2 -->
-<div class="col-span-12 grid grid-cols-2 gap-4">
-<div class="card p-4 bg-[#1e293b] rounded-xl"><h3 class="font-bold">1 ينقل المستخدم الى واجههه منصه الاعمال</h3></div>
-<div class="card p-4 bg-[#1e293b] rounded-xl"><h3 class="font-bold">2 ينقل المستخدم الى واجهة متجر الكتروني</h3></div>
+<!-- 1 و 2 -->
+<div class="col-span-6 bg-[#1e293b] rounded-[18px] p-4">
+<h3 class="font-bold text-black text-[18px]">ينقل المستخدم 1<br>الى واجههه منصه<br>الاعمال</h3>
+</div>
+<div class="col-span-6 bg-[#1e293b] rounded-[18px] p-4">
+<h3 class="font-bold text-black text-[18px]">ينقل المستخدم 2<br>الى واجهة متجر<br>الكتروني</h3>
 </div>
 
-<div class="col-span-12 bg-[#16204a] rounded-xl p-4 text-[12px] leading-6">
-<p>1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2</p>
-<p>حساب تجاري ==== حساب شخصي</p>
-<p>تسجيل الدخول ==== تسجيل الدخوال</p>
-<p>اسم المؤسسة ==== البريد الإلكتروني</p>
-<p>الرقم الضريبي. ==== إنشاء حساب</p>
-<p>بريد الشركه. ==== تسجيل الدخول عبر جوجل</p>
+<!-- حساب تجاري / شخصي -->
+<div class="col-span-12 bg-[#1a2550] rounded-[18px] p-4 text-black text-[14px] leading-7">
+<p>1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2</p>
+<p>حساب شخصي ==== حساب تجاري</p>
+<p>تسجيل الدخول ==== تسجيل الدخول</p>
+<p>البريد الإلكتروني ==== اسم المؤسسة</p>
+<p>إنشاء حساب ==== الرقم الضريبي.</p>
+<p>تسجيل الدخول عبر جوجل ==== بريد الشركه.</p>
 </div>
 
-<!-- Hierarchy -->
-<div class="col-span-12 bg-[#1a2550] rounded-xl p-4 mt-2">
-<h3 class="font-bold">لوحه ادره المؤسسه - مدير المؤسسه وتفاصيله</h3>
-<div class="grid grid-cols-1 gap-2 mt-3 text-[12px]">
-<div class="bg-[#16204a] rounded-xl p-2">إنشاء شركه 1-2-3-4-5-6-7-8-9-10 || /|\</div>
-<div class="bg-[#16204a] rounded-xl p-2">إنشا فرع 1-2-3-4-5-6-7-8-9-10 /|\</div>
-<div class="bg-[#16204a] rounded-xl p-2">إضافة مخزن 1-2-3-4-5-6-7-8-9-10</div>
-<div class="bg-[#16204a] rounded-xl p-2">إضافه عمال 1-2-3-4-5-6-7-8-9-20</div>
-<div class="bg-[#16204a] rounded-xl p-2">إضافه مستخدمين 1-2-3-4-5-6-7-8-9-10</div>
+<!-- لوحة ادارة المؤسسة -->
+<div class="col-span-12 bg-[#1a2550] rounded-[18px] p-4">
+<h3 class="font-bold text-black mb-3">لوحه ادره المؤسسه - مدير المؤسسه وتفاصيله</h3>
+<div class="grid gap-2">
+<div class="bg-[#16204a] rounded-xl p-3 text-black text-[13px]">إنشاء شركه 1-2-3-4-5-6-7-8-9-10 || / \ /|\</div>
+<div class="bg-[#16204a] rounded-xl p-3 text-black text-[13px]">إنشاء فرع 1-2-3-4-5-6-7-8-9-10 || / \ /|\</div>
+<div class="bg-[#16204a] rounded-xl p-3 text-black text-[13px]">إضافة مخزن 1-2-3-4-5-6-7-8-9-10</div>
+<div class="bg-[#16204a] rounded-xl p-3 text-black text-[13px]">إضافه عمال 1-2-3-4-5-6-7-8-9-20</div>
+<div class="bg-[#16204a] rounded-xl p-3 text-black text-[13px]">إضافه مستخدمين 1-2-3-4-5-6-7-8-9-10</div>
 </div>
 </div>
 
 <!-- مشتريات -->
-<div class="col-span-12 card p-4 bg-[#1e293b] rounded-xl mt-2">
-<h3 class="font-bold">مشتريات - الموردين - العملاء - الموضفين - الشركاء</h3>
-<p class="text-[11px] mt-2">مشتريات فاتوره جديده<br>اسم التاجر - رقم الفاتورة - رقم الجوال- الرقم الضريبي- اسم الصنف -سعر الصنف - عدد الصنف- بركود الصنف - وبعادين اخر الفاتوره اجمالي الفاتوره - الخصم - الضريبه المضافه - اجمالي العدد - الاجمالي الكلي - طريقه الدفع. نقد. شبكه. اجل.- واصل من الفاتوره ذمه المورد- طباعة الفاتورة.عادي. bdf</p>
+<div class="col-span-12 bg-[#1e293b] rounded-[18px] p-4">
+<h3 class="font-bold text-black">مشتريات - الموردين - العملاء - الموظفين - الشركاء</h3>
+<p class="text-black text-[12px] mt-2">مشتريات فاتوره جديده<br>اسم التاجر - رقم الفاتورة - رقم الجوال - الرقم الضريبي - اسم الصنف -سعر -سعر الصف...</p>
 <div class="grid grid-cols-3 gap-2 mt-3">
-<div class="bg-[#16204a] rounded-xl p-2 text-[11px]">الموردين بحث<br>اسم التاجر<br>مدين<br>دائن<br>التاجر محمد<br>فاتوره اجل<br>سند واصل<br>فاتوره نقد<br>اجمالي الاجل<br>اجمالي الواصل<br>المتبقي</div>
-<div class="bg-[#16204a] rounded-xl p-2 text-[11px]">العملاء بحث<br>اسم التاجر<br>مدين<br>دائن<br>العميل محمد<br>فاتوره اجل<br>سند واصل<br>فاتوره نقد<br>اجمالي الاجل<br>اجمالي الواصل<br>المتبقي</div>
-<div class="bg-[#16204a] rounded-xl p-2 text-[11px]">الموضفين بحث<br>اسم الموضف - الاسم () - البريد الإلكتروني - الراتب - الدوام- الاجازه- نوع الوضيفه.كاشير. عامل. مدير. مدير. مخازان. عامل توصيل. مشتريات.<br>مدين دائن<br>الموضف محمد<br>سحبيه نقد<br>المتبقي له من الشهر الماضي<br>الباقي عنده من الشهر الحالي<br>الاجمالي<br>المستحقات<br>الغيابات<br>الخصومات<br>الاجازات</div>
+<div class="bg-[#16204a] rounded-xl p-2 text-black text-[11px]">الموردين بحث<br>اسم التاجر<br>مدين<br>دائن<br>التاجر محمد<br>فاتوره اجل<br>سند واصل<br>...</div>
+<div class="bg-[#16204a] rounded-xl p-2 text-black text-[11px]">العملاء بحث<br>اسم التاجر<br>مدين<br>دائن<br>العميل محمد<br>فاتوره اجل<br>سند واصل<br>...</div>
+<div class="bg-[#16204a] rounded-xl p-2 text-black text-[11px]">الموظفيين بحث<br>اسم الموظف - الاسم () - البريد الإلكتروني - الراتب - الدوام- الإجازة -...</div>
 </div>
-<div class="bg-[#16204a] rounded-xl p-2 mt-2 text-[11px]">راس مال الشركاء<br>اسماء الشركاء<br>مكاسب الشركاء<br>ديون الشركاء</div>
+<div class="bg-[#16204a] rounded-xl p-3 mt-2 text-black text-[11px]">راس مال الشركاء<br>اسماء الشركاء<br>مكاسب الشركاء<br>ديون الشركاء</div>
 </div>
 
 <!-- مبيعات -->
-<div class="col-span-12 grid grid-cols-2 gap-2">
-<div class="card p-4 bg-[#1e293b] rounded-xl"><h4 class="font-bold">مبيعات نقطه بيع نقدي</h4><p class="text-[11px]">فاتوره جديده- رقم الفاتوره - اسم الصنف -سعر الصنف - عدد الصنف- بركود الصنف - وبعادين اخر الفاتوره اجمالي الفاتوره - الخصم- الضريبه المضافه - اجمالي العدد - الاجمالي الكلي - طريقه الدفع. نقد. شبكه. اجل. ذمه المورد- طباعه. عادي. bdf</p></div>
-<div class="card p-4 bg-[#1e293b] rounded-xl"><h4 class="font-bold">العملاء</h4><p class="text-[11px]">اسماء العملاء<br>مدين<br>اجل<br>العميل محمد<br>فاتوره اجل<br>فاتوره نقدي<br>سند واصل<br>رقم الفاتوره<br>رقم السند</p></div>
-</div>
+<div class="col-span-7 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">مبيعات نقطه بيع نقدي</h3><p class="text-black text-[11px]">فاتوره جديده- رقم الفاتوره - اسم الصنف -...</p></div>
+<div class="col-span-5 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">العملاء</h3><p class="text-black text-[11px]">اسماء العملاء<br>مدين<br>اجل<br>العميل محمد<br>فاتوره...</p></div>
 
 <!-- المتجر -->
-<div class="col-span-12 grid grid-cols-2 gap-2">
-<div class="card p-4 bg-[#1e293b] rounded-xl"><h4 class="font-bold">المتجر واجهة العميل</h4><p class="text-[11px]">الرئيسية: بنر عروض + أقسام المنتجات + أكثر المنتجات مبيعا + آراء العملاء<br>صفحة المنتج: صور المنتج، السعر الوصف المقاسات/ الألوان، زر "أضف للسلة"، تقييمات<br>السلة والدفع: يختار الكمية، يكتب العنوان يختار الدفع عند الاستلام / تحويل)<br>حسابي طلباتي المفضلة، تتبع الشحنة<br>مهم جدا بحث قوي، وواتساب مباشر، وشحن سريع</p></div>
-<div class="card p-4 bg-[#1e293b] rounded-xl"><h4 class="font-bold">واجهة التاجر لوحة التحكم</h4><p class="text-[11px]">لوحة الأرقام كم المبيعات اليوم؟ كم طلب معلق؟ كم زائر ؟<br>إدارة المنتجات: إضافة منتج جديد (صورة + سعر + كمية)<br>إدارة الطلبات طلب جديد - قيد التجهيز - تم الشحن - تم التسليم مع زر طباعة الفاتورة<br>العملاء: قائمة العملاء وأرقامهم<br>الكوبونات والخصومات تسوي كود خصم<br>الإعدادات: اسم المتجر الشعار، طرق الدفع سعر الشحن</p></div>
-</div>
+<div class="col-span-6 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">المتجر واجهة العميل</h3><p class="text-black text-[11px]">الرئيسية: بنر عروض + أقسام + المنتجات +...</p></div>
+<div class="col-span-6 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">واجهة التاجر لوحة التحكم</h3><p class="text-black text-[11px]">لوحة الأرقام كم المبيعات اليوم؟...</p></div>
 
 <!-- التوصيل -->
-<div class="col-span-12 grid grid-cols-3 gap-2">
-<div class="card p-4 bg-[#1e293b] rounded-xl"><h4 class="font-bold">واجهه توصيل الطلبات - واجهة الزبون</h4><p class="text-[11px]">حالة الطلب مباشر : تم قبول الطلب -> يجهز - - المندوب استلم -> المندوب في الطريق - - تم التوصيل]<br>خريطة مباشرة<br>اسم المندوب + رقمه + زر اتصال<br>الوقت المتوقع للوصول<br>زر تأكيد الاستلام وتقييم المندوب</p></div>
-<div class="card p-4 bg-[#1e293b] rounded-xl"><h4 class="font-bold">واجهة التاجر إدارة التوصيل</h4><p class="text-[11px]">قائمة الطلبات الجاهزة للتوصيل مع زر "طلب مندوب"<br>يختار مندوب معين أو يخلي النظام يختار أقرب مندوب تلقائيا<br>يشوف كل المناديب على الخريطة من متاح /من مشغول)<br>يحسب سعر التوصيل تلقائيا حسب المسافة<br>تقرير: كم طلب تم توصيله اليوم وكم باقي</p></div>
-<div class="card p-4 bg-[#1e293b] rounded-xl"><h4 class="font-bold">واجهة عامل التوصيل</h4><p class="text-[11px]">تسجيل دخول و زر "أنا متاح الآن / مشغول"<br>إشعار "طلب جديد على بعد 2 كم - 3000 ريال توصيل" قبول / رفض<br>عنوان الزبون + التاجر + GPS يفتح جوجل ماب<br>3 أزرار: وصلت للتاجر - استلمت الطلب - وصلت للزبون]<br>كود تأكيد 4 أرقام أو يصور الفاتورة<br>محفظته كم كسب اليوم والأسبوع<br>نظام مثل هنقرستيشن: يدور لأقرب 3 مناديب فاضيين وأول واحد يقبل ياخذ الطلب</p></div>
-</div>
+<div class="col-span-4 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">واجهه توصيل - الطلبات - واجهة الزبون</h3><p class="text-black text-[11px]">حالة الطلب مباشر : تم قبول الطلب -...</p></div>
+<div class="col-span-4 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">واجهة التاجر إدارة التوصيل</h3><p class="text-black text-[11px]">قائمة الطلبات الجاهزة للتوصيل...</p></div>
+<div class="col-span-4 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">واجهة عامل التوصيل</h3><p class="text-black text-[11px]">تسجيل دخول و زر "أنا متاح الان / مشغول"...</p></div>
 
-<!-- استثمار -->
-<div class="col-span-12 card p-4 bg-[#1e293b] rounded-xl">
-<h3 class="font-bold">ملخص فكره منصه استثمار - نظام التمويل التشاركي للمخزون</h3>
-<p class="text-[11px] mt-2">1. فكرة المشروع: منصة تربط بين 3 أطراف: التاجر (يحتاج بضاعة)، المستثمر (يملك رأس المال)، والزبون (يشتري).<br>2. الأطراف: صاحب المنصة (وسيط ضامن يأخذ عمولة) - التاجر - المستثمر - الزبون<br>3. آلية العمل: 1- التاجر ينشئ طلب تمويل (10 جوالات تكلفة 100$ بيع 150$) 2- المستثمر يدفع 1000$ وتحجز باسمه 3- عند البيع 150$ = 100$ رأس مال للمستثمر + 50$ ربح (60% مستثمر 40% تاجر) + عمولة المنصة 4- رصيد المستثمر يظهر فورا في محفظته<br>4. الأنظمة: متجر إلكتروني + سوق استثمار + نظام محاسبي (تقسيم تلقائي + محافظ) + نظام توصيل<br>5. مصادر دخل المنصة: عمولة ثابتة 5% + عمولة سحب + اشتراك شهري</p>
-</div>
+<!-- الاستثمار -->
+<div class="col-span-12 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">ملخص فكره منصه استثمار - نظام التمويل التشاركي للمخزون</h3><p class="text-black text-[11px]">فكرة المشروع: منصة تربط بين 3 أطراف: التاجر (يحتاج بضاعة)، المستثمر، والزبون...</p></div>
 
-<!-- الذكاء الاصطناعي -->
-<div class="col-span-12 card p-4 bg-[#1e293b] rounded-xl">
-<h3 class="font-bold">الذكاء الاصطناعي - المحاسب الذكي بالصوت 💾 🤖</h3>
-<p class="text-[11px] mt-2">بالأوامر الصوتية: "يا محاسب كم بعت اليوم؟" -> "بعت 15 طلب 1200$ ربح 300$" / "سجل مصروف 50$ إيجار" / "كم باقي مخزون أحمد؟" -> "باقي 9 جوالات" / "اعمل تقرير وأرسله للواتساب"<br>بالكتابة: "من أكثر منتج ربحني؟" -> "الجوال الفلاني 500$"<br>النظام: STT Whisper + العقل AI + TTS + مربوط 100% بالمحاسبة + يكشف الغش + لهجة يمنية + كتابة بدون نت</p>
-</div>
+<!-- الذكاء -->
+<div class="col-span-12 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">💾 الذكاء الاصطناعي - المحاسب الذكي بالصوت 🤖</h3><p class="text-black text-[11px]">بالأوامر الصوتية: "يا محاسب كم بعت اليوم؟" -> "بعت 15 طلب $1200 ربح / $300" / "سجل مصروف $50 إيجار...</p></div>
 
 <!-- الاعدادات -->
-<div class="col-span-12 grid grid-cols-2 gap-2">
-<div class="card p-4 bg-[#1e293b] rounded-xl"><h4 class="font-bold">الاعددات الخاصه بالمستخدمين</h4><p class="text-[11px]">الوضع الليلي / النهار - 4 أزرار: 1- ضبط عام: اسم - شعار - واتساب - موقع خريطة - عملة يمني/سعودي/دولار - لغة / 2- ضبط المحاسبة والاستثمار: نسبة المنصة % - تاجر % - مستثمر % - أقل استثمار - أقل سحب - سحب تلقائي/يدوي / 3- ضبط المتجر والتوصيل: سعر توصيل داخل تعز / خارج تعز / دفع عند الاستلام ON/OFF / تقييم منتجات ON/OFF / 4- ضبط الموظفين والبصمة: بداية 8:00 نهاية 10:00 / بصمة عن بعد ON/OFF + GPS 100متر / ربط الغياب بالخصم ON/OFF</p></div>
-<div class="card p-4 bg-[#1e293b] rounded-xl"><h4 class="font-bold">الإعدادات الخاصه بمنشئ التطبيق</h4><p class="text-[11px]">باقات: مجانية 10 منتجات / بداية 3000 ريال 100 منتج + استثمار / برو 9000 ريال غير محدود + ذكي + بصمة / عمولة بيعة 3% = 10000 -> 300 لك / رسوم تمويل 2%<br>أسعار الميزات: محاسب صوتي 2000 / بصمة GPS 1000 / استثمار مجاني مع برو / واتساب 1500 / دومين خاص 5000 / سنة<br>الضبط > التسعير: إضافة باقة + نسبة عمولة + رسوم سحب + جدول ميزات / حركة: أول شهر مجانا + 3 استثمارات بدون عمولة</p></div>
-</div>
+<div class="col-span-6 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">الاعدادات الخاصه بالمستخدمين</h3><p class="text-black text-[11px]">الوضع الليلي / النهار - 4 أزرار...</p></div>
+<div class="col-span-6 bg-[#1e293b] rounded-[18px] p-4"><h3 class="font-bold text-black">الإعدادات الخاصه بمنشئ التطبيق</h3><p class="text-black text-[11px]">باقات: مجانية 10 منتجات /...</p></div>
 
-<div class="col-span-12 grid grid-cols-5 gap-2 mt-2">
-<div class="col-span-5"><div>💾 الذكاء الاصطناعي 🤖</div><div>/محاسبة</div></div>
-</div>
+<div class="col-span-12 bg-[#1e293b] rounded-[18px] p-4 mt-2"><h3 class="font-bold text-black">💾 الذكاء الاصطناعي 🤖 /محاسبة</h3></div>
 
 </body>
 </html>
