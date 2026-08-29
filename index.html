@@ -3,96 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MetaMoot Pro - نظام إدارة الأعمال</title>
+<title>MetaMoot - نظام ميتا مووت</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
-<style>body{font-family:'Tajawal',sans-serif;background:#0a1020;color:white}.glass{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(10px)}</style>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Tajawal';background:#060a23;color:#fff;overflow-x:hidden}
+.card{background:linear-gradient(180deg,#141d42 0%,#0f1838 100%);border:1px solid rgba(60,80,180,0.3);border-radius:20px}
+.gold{color:#ffcc00}
+.map-bg{background:radial-gradient(circle at center,#1a2a7a 0%,#0d1642 70%)}
+</style>
 </head>
-<body class="min-h-screen">
-<!-- LOGIN -->
-<div id="loginPage" class="min-h-screen flex items-center justify-center p-4">
-<div class="glass rounded-[24px] p-8 w-full max-w-sm">
-<h1 class="text-2xl font-extrabold text-center mb-2">MetaMoot Pro</h1>
-<p class="text-center opacity-60 text-sm mb-6">تسجيل دخول الإدارة</p>
-<input id="user" class="w-full bg-white/10 rounded-xl p-3 mb-3 outline-none" placeholder="اسم المستخدم: admin">
-<input id="pass" type="password" class="w-full bg-white/10 rounded-xl p-3 mb-4 outline-none" placeholder="كلمة السر: 1234">
-<button onclick="login()" class="w-full bg-yellow-400 text-black font-bold py-3 rounded-xl">دخول للنظام</button>
-<p class="text-xs text-center mt-3 opacity-50">admin / 1234</p>
+<body class="p-2 lg:p-4">
+<!-- Header -->
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center gap-4">
+<div class="w-9 h-9 bg-white rounded-full overflow-hidden"><img src="https://i.pravatar.cc/100?img=12"></div>
+<span class="font-bold">أحمد ▼</span><span>⚙️</span><span>🔔</span><span>🔍</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-left"><div class="text-3xl font-black tracking-tight">ميتا مووت</div><div class="text-xs text-blue-300 -mt-1">لوحة التحكم • MetaMoot</div></div>
+<div class="w-14 h-14 bg-gradient-to-br from-[#7c5cff] to-[#3b5bff] rounded-2xl flex items-center justify-center text-3xl font-black">M</div>
 </div>
 </div>
 
-<!-- APP -->
-<div id="appPage" class="hidden">
-<header class="glass sticky top-0 z-10 p-4 flex justify-between items-center">
-<h1 class="font-bold">MetaMoot Pro <span class="text-yellow-400 text-xs">v2.0 نظام</span></h1>
-<button onclick="logout()" class="text-sm opacity-70">خروج</button>
-</header>
-
-<div class="p-4 grid grid-cols-2 gap-3">
-<div class="glass rounded-2xl p-4 text-center"><div id="stat1" class="text-2xl font-extrabold text-yellow-400">0</div><div class="text-xs opacity-70">مشروع فدار</div></div>
-<div class="glass rounded-2xl p-4 text-center"><div id="stat2" class="text-2xl font-extrabold text-yellow-400">0</div><div class="text-xs opacity-70">شريك أعمال</div></div>
-<div class="glass rounded-2xl p-4 text-center"><div id="stat3" class="text-2xl font-extrabold">0</div><div class="text-xs opacity-70">فاتورة</div></div>
-<div class="glass rounded-2xl p-4 text-center"><div id="stat4" class="text-2xl font-extrabold">0</div><div class="text-xs opacity-70">ر.س إجمالي</div></div>
+<!-- Top Stats 5 cards -->
+<div class="grid grid-cols-2 lg:grid-cols-5 gap-3 mb-4">
+<div class="card p-4"><div class="flex justify-between"><span class="text-xs opacity-70">إجمالي المبيعات</span><span class="w-8 h-8 bg-blue-500/30 rounded-lg flex items-center justify-center">📊</span></div><div class="text-3xl font-black mt-2">1,245,000</div><div class="mt-2 bg-[#1aef6a]/20 text-[#1aef6a] text-[11px] px-3 py-1 rounded-full inline-block">↑ +12.4% مقابل الشهر الماضي</div></div>
+<div class="card p-4"><div class="flex justify-between"><span class="text-xs opacity-70">المنتجات</span><span class="w-8 h-8 bg-teal-500/30 rounded-lg flex items-center justify-center">📦</span></div><div class="text-3xl font-black mt-2">2,154</div><div class="mt-2 bg-[#1aef6a]/20 text-[#1aef6a] text-[11px] px-3 py-1 rounded-full inline-block">↑ +2.1% مقابل الشهر الماضي</div></div>
+<div class="card p-4"><div class="flex justify-between"><span class="text-xs opacity-70">الطلبات</span><span class="w-8 h-8 bg-orange-500/30 rounded-lg flex items-center justify-center">👤</span></div><div class="text-3xl font-black mt-2">3,842</div><div class="mt-2 bg-[#1aef6a]/20 text-[#1aef6a] text-[11px] px-3 py-1 rounded-full inline-block">↑ +5.3% مقابل الشهر الماضي</div></div>
+<div class="card p-4"><div class="flex justify-between"><span class="text-xs opacity-70">الإيرادات</span><span class="w-8 h-8 bg-purple-500/30 rounded-lg flex items-center justify-center">💳</span></div><div class="text-3xl font-black mt-2">325,400</div><div class="mt-2 bg-[#1aef6a]/20 text-[#1aef6a] text-[11px] px-3 py-1 rounded-full inline-block">↑ +8.1% مقابل الشهر الماضي</div></div>
+<div class="card p-4 border-red-500/30"><div class="flex justify-between"><span class="text-xs opacity-70">التنبيهات المفتوحة</span><span class="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center">❗</span></div><div class="text-3xl font-black mt-2">24</div><div class="mt-2 bg-red-500/20 text-red-300 text-[11px] px-3 py-1 rounded-full inline-block">↓ أقل من الأمس بـ 3</div></div>
 </div>
 
-<div class="p-4">
-<div class="flex gap-2 mb-4">
-<button onclick="tab('clients')" id="btn-clients" class="flex-1 bg-yellow-400 text-black font-bold py-2 rounded-xl">العملاء</button>
-<button onclick="tab('invoices')" id="btn-invoices" class="flex-1 glass py-2 rounded-xl">الفواتير</button>
-<button onclick="tab('projects')" id="btn-projects" class="flex-1 glass py-2 rounded-xl">المشاريع</button>
+<!-- Main Grid -->
+<div class="grid grid-cols-12 gap-3">
+<!-- Map -->
+<div class="col-span-12 lg:col-span-6 card p-4 map-bg min-h-[420px] relative overflow-hidden">
+<div class="flex justify-between"><h3 class="font-bold">خريطة المملكة العربية السعودية</h3><span class="text-[10px] opacity-60">13 منطقة نشطة • now</span></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-30 text-[180px]">🗺️</div>
+<div class="relative mt-10 space-y-6 text-xs">
+<div class="flex gap-2">🔵 تبوك - موقع نشط</div>
+<div class="flex gap-2">🔵 المدينة المنورة - موقع نشط</div>
+<div class="flex gap-2">🔵 مكة المكرمة - موقع نشط</div>
+<div class="flex gap-2">🔵 جدة - موقع نشط</div>
+<div class="flex gap-2">🔵 الرياض - موقع نشط <span class="text-cyan-300">●</span></div>
+<div class="flex gap-2">🟠 نجران - تنبيه</div>
+</div>
+<div class="absolute bottom-3 left-4 right-4 flex gap-4 text-[10px] opacity-60"><span>🔵 موقع نشط</span><span>🟠 تنبيه</span><span>اتصال الشبكة ---</span></div>
 </div>
 
-<div id="tab-clients">
-<div class="glass rounded-2xl p-4 mb-3">
-<h3 class="font-bold mb-3">+ إضافة عميل جديد</h3>
-<div class="flex gap-2"><input id="cName" placeholder="اسم العميل" class="flex-1 bg-white/10 rounded-xl p-3 text-sm outline-none"><button onclick="addClient()" class="bg-yellow-400 text-black px-5 rounded-xl font-bold">إضافة</button></div>
+<!-- Donut -->
+<div class="col-span-6 lg:col-span-3 card p-4 text-center">
+<h3 class="font-bold">تفصيل المبيعات</h3>
+<div class="relative w-48 h-48 mx-auto mt-6">
+<div class="absolute inset-0 rounded-full" style="background:conic-gradient(#4a6cff 0% 52%, #a855f7 52% 82%, #d946ef 82% 100%)"></div>
+<div class="absolute inset-[18%] bg-[#0f1838] rounded-full flex flex-col items-center justify-center"><div class="text-2xl font-black">1,245,000</div><div class="text-[10px] opacity-60">إجمالي المبيعات</div></div>
 </div>
-<div id="clientsList" class="space-y-2"></div>
-</div>
-
-<div id="tab-invoices" class="hidden">
-<div class="glass rounded-2xl p-4 mb-3">
-<h3 class="font-bold mb-3">+ إنشاء فاتورة</h3>
-<input id="iClient" placeholder="اسم العميل" class="w-full bg-white/10 rounded-xl p-3 text-sm outline-none mb-2">
-<input id="iAmount" type="number" placeholder="المبلغ ر.س" class="w-full bg-white/10 rounded-xl p-3 text-sm outline-none mb-2">
-<button onclick="addInvoice()" class="w-full bg-yellow-400 text-black font-bold py-3 rounded-xl">إصدار فاتورة</button>
-</div>
-<div id="invoicesList" class="space-y-2"></div>
+<div class="mt-4 text-[11px] text-right space-y-1"><div>● المنتجات الرقمية 52%</div><div>● الأجهزة 30%</div><div>● الخدمات 18%</div></div>
+<div class="mt-4 text-sm">الأعلى أداء - الرياض <span class="text-green-400">↑ +18.2%</span></div>
 </div>
 
-<div id="tab-projects" class="hidden">
-<div class="glass rounded-2xl p-4 mb-3">
-<h3 class="font-bold mb-3">+ إضافة مشروع</h3>
-<div class="flex gap-2"><input id="pName" placeholder="اسم المشروع" class="flex-1 bg-white/10 rounded-xl p-3 text-sm outline-none"><button onclick="addProject()" class="bg-yellow-400 text-black px-5 rounded-xl font-bold">إضافة</button></div>
-</div>
-<div id="projectsList" class="space-y-2"></div>
-</div>
+<!-- Hierarchy -->
+<div class="col-span-6 lg:col-span-3 card p-4">
+<h3 class="font-bold">تسلسل التقارير الهرمي</h3>
+<div class="bg-[#1a2550] rounded-xl p-3 mt-3 text-sm flex justify-between"><span>📁 التقرير السنوي 2024</span></div>
+<div class="grid grid-cols-2 gap-2 mt-3">
+<div class="bg-[#16204a] rounded-xl p-3 text-center border border-green-500/30"><div class="w-5 h-5 bg-green-500 rounded-full mx-auto flex items-center justify-center text-[10px]">✓</div><div class="text-[11px] mt-1">الربع الثالث</div><div class="font-bold">310,000</div><div class="text-[9px] bg-green-500 text-black px-2 rounded-full mt-1 inline-block">مكتمل</div></div>
+<div class="bg-[#16204a] rounded-xl p-3 text-center border border-green-500/30"><div class="w-5 h-5 bg-green-500 rounded-full mx-auto flex items-center justify-center text-[10px]">✓</div><div class="text-[11px] mt-1">الربع الرابع 2024</div><div class="font-bold">345,000</div><div class="text-[9px] bg-green-500 text-black px-2 rounded-full mt-1 inline-block">مكتمل</div></div>
+<div class="bg-[#16204a] rounded-xl p-2 text-center mt-1"><div class="text-[10px]">القنوات الرقمية</div><div class="font-bold text-sm">135,000</div></div>
+<div class="bg-[#16204a] rounded-xl p-2 text-center mt-1"><div class="text-[10px]">المبيعات المباشرة</div><div class="font-bold text-sm">210,000</div></div>
 </div>
 </div>
 
-<script>
-let data = JSON.parse(localStorage.getItem('metamoot_v2') || '{"clients":[],"invoices":[],"projects":[]}');
-function save(){localStorage.setItem('metamoot_v2',JSON.stringify(data)); render();}
-function login(){if(user.value=='admin'&&pass.value=='1234'){localStorage.setItem('logged','1'); showApp()} else alert('خطأ: admin / 1234')}
-function logout(){localStorage.removeItem('logged'); location.reload()}
-function showApp(){loginPage.classList.add('hidden'); appPage.classList.remove('hidden'); render();}
-if(localStorage.getItem('logged')) showApp();
-function tab(t){['clients','invoices','projects'].forEach(x=>{document.getElementById('tab-'+x).classList.add('hidden'); document.getElementById('btn-'+x).className='flex-1 glass py-2 rounded-xl'}); document.getElementById('tab-'+t).classList.remove('hidden'); document.getElementById('btn-'+t).className='flex-1 bg-yellow-400 text-black font-bold py-2 rounded-xl'}
-function addClient(){if(!cName.value)return; data.clients.push({id:Date.now(),name:cName.value}); cName.value=''; save()}
-function addInvoice(){if(!iClient.value||!iAmount.value)return; data.invoices.push({id:Date.now(),client:iClient.value,amount:+iAmount.value}); iClient.value=''; iAmount.value=''; save()}
-function addProject(){if(!pName.value)return; data.projects.push({id:Date.now(),name:pName.value}); pName.value=''; save()}
-function delClient(id){data.clients=data.clients.filter(c=>c.id!=id); save()}
-function delInv(id){data.invoices=data.invoices.filter(c=>c.id!=id); save()}
-function delProj(id){data.projects=data.projects.filter(c=>c.id!=id); save()}
-function render(){
-clientsList.innerHTML=data.clients.map(c=>`<div class="glass rounded-xl p-3 flex justify-between"><span>${c.name}</span><button onclick="delClient(${c.id})" class="text-red-400 text-sm">حذف</button></div>`).join('')||'<p class="opacity-50 text-sm text-center">لا يوجد عملاء</p>';
-invoicesList.innerHTML=data.invoices.map(c=>`<div class="glass rounded-xl p-3 flex justify-between"><span>${c.client} - ${c.amount} ر.س</span><button onclick="delInv(${c.id})" class="text-red-400 text-sm">حذف</button></div>`).join('')||'<p class="opacity-50 text-sm text-center">لا يوجد فواتير</p>';
-projectsList.innerHTML=data.projects.map(c=>`<div class="glass rounded-xl p-3 flex justify-between"><span>${c.name}</span><button onclick="delProj(${c.id})" class="text-red-400 text-sm">حذف</button></div>`).join('')||'<p class="opacity-50 text-sm text-center">لا يوجد مشاريع</p>';
-stat1.textContent=(500+data.projects.length)+'+';
-stat2.textContent=(120+data.clients.length)+'+';
-stat3.textContent=data.invoices.length;
-stat4.textContent=data.invoices.reduce((s,i)=>s+i.amount,0);
-}
-</script>
+<!-- Bottom row -->
+<div class="col-span-12 grid grid-cols-1 lg:grid-cols-3 gap-3 mt-2">
+<div class="card p-4"><h4 class="font-bold">📱 تطبيق الجوال</h4><div class="bg-black rounded-[24px] w-32 h-56 mx-auto mt-3 p-2 border-4 border-gray-800"><div class="text-[10px]">ميتا مووت</div><div class="text-[9px] opacity-60 mt-1">المبيعات اليوم</div><div class="font-bold">84,200</div><div class="h-10 bg-gradient-to-t from-blue-500/50 to-transparent mt-2 rounded"></div></div></div>
+<div class="card p-4"><h4 class="font-bold">🔒 الإغلاق اليومي</h4><div class="mt-4 flex gap-2 text-green-400 text-sm"><span class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-black">✓</span> تم الإغلاق بنجاح</div><div class="mt-2 text-xs opacity-70">التاريخ: 23:45 - الأربع<br>المطابقة: 99.8%<br>عدد المعاملات: 1,184 معاملة مكتملة</div><button class="w-full mt-4 bg-[#1a2550] py-2 rounded-xl text-sm">عرض التقرير الكامل</button></div>
+<div class="card p-4"><h4 class="font-bold">👆 الحضور</h4><div class="mt-2 font-bold">تم تسجيل 187 موظف</div><div class="flex gap-3 mt-2 text-xs"><span class="text-green-400">● حاضر: 165</span><span>● غائب: 12</span><span class="text-orange-400">● إجازة: 10</span></div><div class="mt-4 bg-[#1a2550] rounded-xl p-3"><div class="text-xs">سوق الاستثمار</div><div class="flex gap-2 mt-2"><button class="flex-1 bg-blue-600 py-1 rounded-lg text-xs">↑ شراء</button><button class="flex-1 bg-transparent border border-orange-500 py-1 rounded-lg text-xs">↓ بيع</button></div></div></div>
+</div>
+</div>
+
+<div class="grid grid-cols-5 gap-2 mt-4 text-[10px] opacity-60 text-center pb-10">
+<div>💾 المخزون</div><div>📷 الكاميرات</div><div>👥 الموارد البشرية</div><div>📊 المحاسبة</div><div>🤖 الذكاء الاصطناعي</div>
+</div>
 </body>
 </html>
