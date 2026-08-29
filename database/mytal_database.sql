@@ -1,0 +1,21 @@
+-- mytal database - 20 جدول
+CREATE TABLE companies (id SERIAL PRIMARY KEY, name TEXT);
+CREATE TABLE branches (id SERIAL PRIMARY KEY, company_id INT, name TEXT);
+CREATE TABLE warehouses (id SERIAL PRIMARY KEY, branch_id INT, name TEXT);
+CREATE TABLE employees (id SERIAL PRIMARY KEY, name TEXT, salary INT);
+CREATE TABLE system_users (id SERIAL PRIMARY KEY, email TEXT UNIQUE);
+CREATE TABLE products (id SERIAL PRIMARY KEY, name TEXT, price INT, quantity INT);
+CREATE TABLE suppliers (id SERIAL PRIMARY KEY, name TEXT);
+CREATE TABLE purchase_invoices (id SERIAL PRIMARY KEY, total INT);
+CREATE TABLE purchase_items (id SERIAL PRIMARY KEY, product_name TEXT, qty INT);
+CREATE TABLE customers (id SERIAL PRIMARY KEY, name TEXT);
+CREATE TABLE sales_invoices (id SERIAL PRIMARY KEY, total INT);
+CREATE TABLE sales_items (id SERIAL PRIMARY KEY, product_name TEXT, qty INT, price INT);
+CREATE TABLE partners (id SERIAL PRIMARY KEY, name TEXT, capital INT);
+CREATE TABLE store_orders (id SERIAL PRIMARY KEY, status TEXT, total INT);
+CREATE TABLE delivery_persons (id SERIAL PRIMARY KEY, name TEXT);
+CREATE TABLE deliveries (id SERIAL PRIMARY KEY, status TEXT);
+CREATE TABLE investment_requests (id SERIAL PRIMARY KEY, product_name TEXT, quantity INT);
+CREATE TABLE investments (id SERIAL PRIMARY KEY, total_funded INT);
+CREATE TABLE wallets (id SERIAL PRIMARY KEY, balance INT);
+CREATE TABLE settings (id SERIAL PRIMARY KEY, platform_fee_percent INT DEFAULT 5);
