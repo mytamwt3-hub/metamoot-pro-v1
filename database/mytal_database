@@ -1,0 +1,22 @@
+-- منصة myta1 - قاعدة البيانات الكاملة - 20 جدول
+
+CREATE TABLE companies (id SERIAL PRIMARY KEY, name VARCHAR(255), tax_number VARCHAR(100), email VARCHAR(255), created_at TIMESTAMP DEFAULT NOW());
+CREATE TABLE branches (id SERIAL PRIMARY KEY, company_id INT REFERENCES companies(id), name VARCHAR(255), location VARCHAR(255));
+CREATE TABLE warehouses (id SERIAL PRIMARY KEY, branch_id INT REFERENCES branches(id), name VARCHAR(255));
+CREATE TABLE employees (id SERIAL PRIMARY KEY, company_id INT REFERENCES companies(id), name VARCHAR(255), email VARCHAR(255), salary DECIMAL(10,2), job_type VARCHAR(50), debt DECIMAL(10,2) DEFAULT 0, credit DECIMAL(10,2) DEFAULT 0);
+CREATE TABLE system_users (id SERIAL PRIMARY KEY, company_id INT REFERENCES companies(id), email VARCHAR(255) UNIQUE, role VARCHAR(50), login_type VARCHAR(20));
+CREATE TABLE products (id SERIAL PRIMARY KEY, company_id INT REFERENCES companies(id), name VARCHAR(255), barcode VARCHAR(100) UNIQUE, price DECIMAL(10,2), quantity INT DEFAULT 0);
+CREATE TABLE suppliers (id SERIAL PRIMARY KEY, company_id INT REFERENCES companies(id), name VARCHAR(255), phone VARCHAR(50), debt DECIMAL(10,2) DEFAULT 0, credit DECIMAL(10,2) DEFAULT 0);
+CREATE TABLE purchase_invoices (id SERIAL PRIMARY KEY, company_id INT REFERENCES companies(id), supplier_id INT REFERENCES suppliers(id), invoice_number VARCHAR(100) UNIQUE, total_amount DECIMAL(10,2), payment_type VARCHAR(20), created_at TIMESTAMP DEFAULT NOW());
+CREATE TABLE purchase_items (id SERIAL PRIMARY KEY, invoice_id INT REFERENCES purchase_invoices(id), product_name VARCHAR(255), price DECIMAL(10,2), qty INT);
+CREATE TABLE customers (id SERIAL PRIMARY KEY, company_id INT REFERENCES companies(id), name VARCHAR(255), phone VARCHAR(50), debt DECIMAL(10,2) DEFAULT 0);
+CREATE TABLE sales_invoices (id SERIAL PRIMARY KEY, company_id INT REFERENCES companies(id), customer_id INT REFERENCES customers(id), invoice_number VARCHAR(100) UNIQUE, total_amount DECIMAL(10,2), payment_type VARCHAR(20), created_at TIMESTAMP DEFAULT NOW());
+CREATE TABLE sales_items (id SERIAL PRIMARY KEY, invoice_id INT REFERENCES sales_invoices(id), product_id INT REFERENCES products(id), product_name VARCHAR(255), price DECIMAL(10,2), qty INT);
+CREATE TABLE partners (id SERIAL PRIMARY KEY, company_id INT REFERENCES companies(id), name VARCHAR(255), capital DECIMAL(10,2), profit DECIMAL(10,2) DEFAULT 0);
+CREATE TABLE store_orders (id SERIAL PRIMARY KEY, company_id INT REFERENCES companies(id), status VARCHAR(50), total DECIMAL(10,2), created_at TIMESTAMP DEFAULT NOW());
+CREATE TABLE delivery_persons (id SERIAL PRIMARY KEY, company_id INT REFERENCES companies(id), name VARCHAR(255), is_available BOOLEAN DEFAULT true, current_lat DECIMAL(10,8), current_lng DECIMAL(11,8));
+CREATE TABLE deliveries (id SERIAL PRIMARY KEY, order_id INT REFERENCES store_orders(id), delivery_person_id INT REFERENCES delivery_persons(id), status VARCHAR(50), confirmation_code VARCHAR(4), delivery_fee DECIMAL(10,2));
+CREATE TABLE investment_requests (id SERIAL PRIMARY KEY, company_id INT REFERENCES companies(id), product_name VARCHAR(255), quantity INT, cost_price DECIMAL(10,2), selling_price DECIMAL(10,2), status VARCHAR(20) DEFAULT 'متاح');
+CREATE TABLE investments (id SERIAL PRIMARY KEY, request_id INT REFERENCES investment_requests(id), total_funded DECIMAL(10,2), remaining_qty INT, total_profit DECIMAL(10,2) DEFAULT 0);
+CREATE TABLE wallets (id SERIAL PRIMARY KEY, user_id INT REFERENCES system_users(id), user_type VARCHAR(20), balance DECIMAL(10,2) DEFAULT 0);
+CREATE TABLE settings (id SERIAL PRIMARY KEY, company_id INT REFERENCES companies(id) UNIQUE, platform_name VARCHAR(255), currency VARCHAR(10), platform_fee_percent DECIMAL(5,2) DEFAULT 5);
