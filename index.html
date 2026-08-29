@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MetaMoot Pro - نظام إدارة الأعمال</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+<style>body{font-family:'Tajawal',sans-serif;background:#0a1020;color:white}.glass{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(10px)}</style>
+</head>
+<body class="min-h-screen">
+<!-- LOGIN -->
+<div id="loginPage" class="min-h-screen flex items-center justify-center p-4">
+<div class="glass rounded-[24px] p-8 w-full max-w-sm">
+<h1 class="text-2xl font-extrabold text-center mb-2">MetaMoot Pro</h1>
+<p class="text-center opacity-60 text-sm mb-6">تسجيل دخول الإدارة</p>
+<input id="user" class="w-full bg-white/10 rounded-xl p-3 mb-3 outline-none" placeholder="اسم المستخدم: admin">
+<input id="pass" type="password" class="w-full bg-white/10 rounded-xl p-3 mb-4 outline-none" placeholder="كلمة السر: 1234">
+<button onclick="login()" class="w-full bg-yellow-400 text-black font-bold py-3 rounded-xl">دخول للنظام</button>
+<p class="text-xs text-center mt-3 opacity-50">admin / 1234</p>
+</div>
+</div>
+
+<!-- APP -->
+<div id="appPage" class="hidden">
+<header class="glass sticky top-0 z-10 p-4 flex justify-between items-center">
+<h1 class="font-bold">MetaMoot Pro <span class="text-yellow-400 text-xs">v2.0 نظام</span></h1>
+<button onclick="logout()" class="text-sm opacity-70">خروج</button>
+</header>
+
+<div class="p-4 grid grid-cols-2 gap-3">
+<div class="glass rounded-2xl p-4 text-center"><div id="stat1" class="text-2xl font-extrabold text-yellow-400">0</div><div class="text-xs opacity-70">مشروع فدار</div></div>
+<div class="glass rounded-2xl p-4 text-center"><div id="stat2" class="text-2xl font-extrabold text-yellow-400">0</div><div class="text-xs opacity-70">شريك أعمال</div></div>
+<div class="glass rounded-2xl p-4 text-center"><div id="stat3" class="text-2xl font-extrabold">0</div><div class="text-xs opacity-70">فاتورة</div></div>
+<div class="glass rounded-2xl p-4 text-center"><div id="stat4" class="text-2xl font-extrabold">0</div><div class="text-xs opacity-70">ر.س إجمالي</div></div>
+</div>
+
+<div class="p-4">
+<div class="flex gap-2 mb-4">
+<button onclick="tab('clients')" id="btn-clients" class="flex-1 bg-yellow-400 text-black font-bold py-2 rounded-xl">العملاء</button>
+<button onclick="tab('invoices')" id="btn-invoices" class="flex-1 glass py-2 rounded-xl">الفواتير</button>
+<button onclick="tab('projects')" id="btn-projects" class="flex-1 glass py-2 rounded-xl">المشاريع</button>
+</div>
+
+<div id="tab-clients">
+<div class="glass rounded-2xl p-4 mb-3">
+<h3 class="font-bold mb-3">+ إضافة عميل جديد</h3>
+<div class="flex gap-2"><input id="cName" placeholder="اسم العميل" class="flex-1 bg-white/10 rounded-xl p-3 text-sm outline-none"><button onclick="addClient()" class="bg-yellow-400 text-black px-5 rounded-xl font-bold">إضافة</button></div>
+</div>
+<div id="clientsList" class="space-y-2"></div>
+</div>
+
+<div id="tab-invoices" class="hidden">
+<div class="glass rounded-2xl p-4 mb-3">
+<h3 class="font-bold mb-3">+ إنشاء فاتورة</h3>
+<input id="iClient" placeholder="اسم العميل" class="w-full bg-white/10 rounded-xl p-3 text-sm outline-none mb-2">
+<input id="iAmount" type="number" placeholder="المبلغ ر.س" class="w-full bg-white/10 rounded-xl p-3 text-sm outline-none mb-2">
+<button onclick="addInvoice()" class="w-full bg-yellow-400 text-black font-bold py-3 rounded-xl">إصدار فاتورة</button>
+</div>
+<div id="invoicesList" class="space-y-2"></div>
+</div>
+
+<div id="tab-projects" class="hidden">
+<div class="glass rounded-2xl p-4 mb-3">
+<h3 class="font-bold mb-3">+ إضافة مشروع</h3>
+<div class="flex gap-2"><input id="pName" placeholder="اسم المشروع" class="flex-1 bg-white/10 rounded-xl p-3 text-sm outline-none"><button onclick="addProject()" class="bg-yellow-400 text-black px-5 rounded-xl font-bold">إضافة</button></div>
+</div>
+<div id="projectsList" class="space-y-2"></div>
+</div>
+</div>
+</div>
+
+<script>
+let data = JSON.parse(localStorage.getItem('metamoot_v2') || '{"clients":[],"invoices":[],"projects":[]}');
+function save(){localStorage.setItem('metamoot_v2',JSON.stringify(data)); render();}
+function login(){if(user.value=='admin'&&pass.value=='1234'){localStorage.setItem('logged','1'); showApp()} else alert('خطأ: admin / 1234')}
+function logout(){localStorage.removeItem('logged'); location.reload()}
+function showApp(){loginPage.classList.add('hidden'); appPage.classList.remove('hidden'); render();}
+if(localStorage.getItem('logged')) showApp();
+function tab(t){['clients','invoices','projects'].forEach(x=>{document.getElementById('tab-'+x).classList.add('hidden'); document.getElementById('btn-'+x).className='flex-1 glass py-2 rounded-xl'}); document.getElementById('tab-'+t).classList.remove('hidden'); document.getElementById('btn-'+t).className='flex-1 bg-yellow-400 text-black font-bold py-2 rounded-xl'}
+function addClient(){if(!cName.value)return; data.clients.push({id:Date.now(),name:cName.value}); cName.value=''; save()}
+function addInvoice(){if(!iClient.value||!iAmount.value)return; data.invoices.push({id:Date.now(),client:iClient.value,amount:+iAmount.value}); iClient.value=''; iAmount.value=''; save()}
+function addProject(){if(!pName.value)return; data.projects.push({id:Date.now(),name:pName.value}); pName.value=''; save()}
+function delClient(id){data.clients=data.clients.filter(c=>c.id!=id); save()}
+function delInv(id){data.invoices=data.invoices.filter(c=>c.id!=id); save()}
+function delProj(id){data.projects=data.projects.filter(c=>c.id!=id); save()}
+function render(){
+clientsList.innerHTML=data.clients.map(c=>`<div class="glass rounded-xl p-3 flex justify-between"><span>${c.name}</span><button onclick="delClient(${c.id})" class="text-red-400 text-sm">حذف</button></div>`).join('')||'<p class="opacity-50 text-sm text-center">لا يوجد عملاء</p>';
+invoicesList.innerHTML=data.invoices.map(c=>`<div class="glass rounded-xl p-3 flex justify-between"><span>${c.client} - ${c.amount} ر.س</span><button onclick="delInv(${c.id})" class="text-red-400 text-sm">حذف</button></div>`).join('')||'<p class="opacity-50 text-sm text-center">لا يوجد فواتير</p>';
+projectsList.innerHTML=data.projects.map(c=>`<div class="glass rounded-xl p-3 flex justify-between"><span>${c.name}</span><button onclick="delProj(${c.id})" class="text-red-400 text-sm">حذف</button></div>`).join('')||'<p class="opacity-50 text-sm text-center">لا يوجد مشاريع</p>';
+stat1.textContent=(500+data.projects.length)+'+';
+stat2.textContent=(120+data.clients.length)+'+';
+stat3.textContent=data.invoices.length;
+stat4.textContent=data.invoices.reduce((s,i)=>s+i.amount,0);
+}
+</script>
+</body>
+</html>
